@@ -9,7 +9,7 @@ import { AuthguardService }  from './service/authguard.service';
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthguardService]},
+  { path: 'home', component: HomeComponent, canActivate: [ AuthguardService ]},
 
   // otherwise redirect to home
   { path: '**', redirectTo: '/login' }
@@ -17,7 +17,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
+  ],
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
  
-@Injectable()
+@Injectable({
+  providedIn: 'root' // ADDED providedIn root here.
+})
 export class DataService {
   constructor() { }
   login(post): Observable<any> {

@@ -3,6 +3,8 @@ import { Router,  NavigationExtras,ActivatedRoute } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../service/data.service';
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

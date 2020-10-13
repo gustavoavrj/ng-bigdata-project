@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthguardService }  from './service/authguard.service';
 import { RegisterComponent } from './register/register.component';
+import { DataService } from './service/data.service';
+import { RouterModule, Router } from '@angular/router';
 
 
 @NgModule({
@@ -20,9 +22,14 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([])
   ],
-  providers: [AuthguardService],
+  providers: [
+    AuthguardService,
+    DataService,
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
