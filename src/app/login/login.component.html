@@ -6,7 +6,7 @@
             <div>
                 <p class="mb-1">Login</p>
                 <h4 class="mb-5 text-white">Login to your account</h4>
-            </div> <button class="btn btn-primary btn-lg"><small>Register</small><span>&nbsp;Click Here</span> </button>
+            </div> <a routerLink="register"><button class="btn btn-primary btn-lg"><small>Register</small><span>&nbsp;Click Here</span> </button></a>
         </div>
         <div class="card two bg-white px-5 py-4 mb-3">
             <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
