@@ -10,6 +10,7 @@ import { AuthguardService }  from './service/authguard.service';
 import { RegisterComponent } from './register/register.component';
 import { DataService } from './service/data.service';
 import { RouterModule, Router } from '@angular/router';
+import { LandingboardComponent } from './landingboard/landingboard.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { RouterModule, Router } from '@angular/router';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    LandingboardComponent
   ],
   imports: [
     BrowserModule,

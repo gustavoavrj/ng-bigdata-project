@@ -5,17 +5,19 @@ import { RegisterComponent } from './register/register.component';
 
 import { HomeComponent } from './home/home.component';
 import { AuthguardService }  from './service/authguard.service';
+import { LandingboardComponent } from './landingboard/landingboard.component';
 
 
 
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
+  { path: 'landing', component: LandingboardComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent, canActivate: [ AuthguardService ]},
 
   // otherwise redirect to home
-  { path: '**', redirectTo: '/login' }
+  { path: '**', redirectTo: '/landing' }
 
 ];
 
