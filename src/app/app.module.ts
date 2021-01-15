@@ -1,35 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthguardService }  from './service/authguard.service';
+import { FormsModule } from '@angular/forms';
+import { LandingboardComponent } from './landingboard/landingboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
-import { DataService } from './service/data.service';
-import { RouterModule, Router } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { GraphQLModule } from './graphql.module';
+import { AuthGuard } from './auth.guard';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    HomeComponent,
-    RegisterComponent
+    LandingboardComponent,
+    DashboardComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([])
+    HttpClientModule,
+    GraphQLModule,
+    ChartsModule
   ],
   providers: [
-    AuthguardService,
-    DataService,
-   ],
-  bootstrap: [AppComponent]
+    AuthGuard,  
+],
+  bootstrap: [AppComponent, RegisterComponent, LoginComponent, DashboardComponent]
 })
 export class AppModule { }
